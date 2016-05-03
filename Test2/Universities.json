@@ -1,0 +1,117 @@
+{
+    "universities":[
+                    {
+                    "id":1,
+                    "name": "Harvard University",
+                    "place": "Cambridge",
+                    "image": "https://lh5.googleusercontent.com/-5HgubPx3b20/AAAAAAAAAAI/AAAAAAAAE1U/HXqd-gt9HwI/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering", "Arts and Science"]
+                    },
+                    {
+                    "id":2,
+                    "name": "Stanford University",
+                    "place": "450 Serra Mall, Stanford",
+                    "image": "https://lh5.googleusercontent.com/-9ZtfI7Iadbo/AAAAAAAAAAI/AAAAAAAAASM/pa_22SDQqFI/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Mathematics"]
+                    },
+                    {
+                    "id":3,
+                    "name": "Yale University",
+                    "place": "New Haven",
+                    "image": "https://lh5.googleusercontent.com/-8MnYb1DXXXI/AAAAAAAAAAI/AAAAAAAAADE/HnWmw65TZQQ/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["Arts and Science", "Engineering"]
+                    },
+                    {
+                    "id":4,
+                    "name": "Massachusetts Institute of Technology",
+                    "place": "Cambridge",
+                    "image": "https://lh6.googleusercontent.com/-HXcwA8OCaSU/AAAAAAAAAAI/AAAAAAAAQq0/FJOLa4BlZ60/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["Mathematics", "Engineering","Medicine"]
+                    },
+                    {
+                    "id":5,
+                    "name": "Cornell University",
+                    "place": "Ithaca, NY 14850",
+                    "image": "https://lh3.googleusercontent.com/-2jofGt-kQZk/AAAAAAAAAAI/AAAAAAAAKG8/AEw24vbiblA/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":6,
+                    "name": "Princeton University",
+                    "place": "Princeton, NJ 08544",
+                    "image": "https://lh4.googleusercontent.com/-eJ6mEvslTq8/AAAAAAAAAAI/AAAAAAAAJDg/bRLwo2LAdew/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":7,
+                    "name": "Columbia University",
+                    "place": "116th St & Broadway, New York",
+                    "image": "https://lh3.googleusercontent.com/-4LORSEgp28U/AAAAAAAAAAI/AAAAAAAAErY/W4Ug6i3Vc64/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["Mathematics", "Arts and Science","Medicine"]
+                    },
+                    {
+                    "id":8,
+                    "name": "University of California, Los Angeles",
+                    "place": "Los Angeles, California",
+                    "image": "https://lh5.googleusercontent.com/-d5xiAp-5daE/AAAAAAAAAAI/AAAAAAAAADE/isyaVAht8CU/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Arts and Science"]
+                    },
+                    {
+                    "id":9,
+                    "name": "Johns Hopkins University",
+                    "place": "Baltimore, Maryland",
+                    "image": "https://lh4.googleusercontent.com/-vt0qVScbeaE/AAAAAAAAAAI/AAAAAAAAAZY/PJXCeqlyXc0/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":10,
+                    "name": "United States University",
+                    "place": "830 Bay Blvd, Chula Vista, CA 91911",
+                    "image": "https://www.higheredjobs.com/images/AccountImages/5772_1.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":11,
+                    "name": "University of Pennsylvania",
+                    "place": "Philadelphia, PA 19104",
+                    "image": "https://lh5.googleusercontent.com/-40Vqb2L3L_E/AAAAAAAAAAI/AAAAAAAAF7k/DIofsCrK0Pk/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":12,
+                    "name": "University of Southern California",
+                    "place": "Los Angeles, CA",
+                    "image": "https://lh6.googleusercontent.com/-c9dn91oPgno/AAAAAAAAAAI/AAAAAAAAB_0/VP8bNTCSFr4/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":13,
+                    "name": "University of Chicago",
+                    "place": "5801 S Ellis Ave, Chicago",
+                    "image": "https://lh6.googleusercontent.com/-lWeBqmalLYk/AAAAAAAAAAI/AAAAAAAAAkU/4Ms5cd4gBhU/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":14,
+                    "name": "University of California, Berkeley",
+                    "place": "Berkeley, CA",
+                    "image": "https://lh6.googleusercontent.com/-5Lnp5Lj9rVQ/AAAAAAAAAAI/AAAAAAAAAtY/F_t-61CH55M/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":15,
+                    "name": "New York University",
+                    "place": "New York, NY",
+                    "image": "https://decollins1969.files.wordpress.com/2016/03/nyu-logo.jpg",
+                    "courses": ["Arts and Science", "Engineering", "Medicine"]
+                    },
+                    {
+                    "id":16,
+                    "name": "University of Washington",
+                    "place": "Seattle, WA",
+                    "image": "https://lh4.googleusercontent.com/-OEpZSoFBCco/AAAAAAAAAAI/AAAAAAAADQg/0u4UrvYEYbs/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering", "Medicine"]
+                    },
+                    
+              ]
+}
