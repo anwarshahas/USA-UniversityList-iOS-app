@@ -26,7 +26,7 @@ class UniversityListViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        initUIComponents()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -35,7 +35,8 @@ class UniversityListViewController: BaseViewController {
     }
     
     func initUIComponents() {
-        
+        //self.navigationController!.interactivePopGestureRecognizer!.enabled = false
+        self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
     }
     
     func initUIConstrinats() {
@@ -190,4 +191,16 @@ extension UniversityListViewController: FilterPopUpDelegate {
         filterFromList(list)
     }
     
+}
+
+extension UniversityListViewController:UIGestureRecognizerDelegate {
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if(gestureRecognizer.isEqual(self.navigationController!.interactivePopGestureRecognizer)) {
+            return false
+        } else {
+            return false
+        }
+        
+    }
 }

@@ -28,6 +28,11 @@ class UniversityDetailsViewController: BaseViewController {
         initUIComponents()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.interactivePopGestureRecognizer!.delegate = self
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,11 +40,14 @@ class UniversityDetailsViewController: BaseViewController {
     }
     
     func initUIComponents() {
-        imageView.setCornerRadius(10.0)
+        
         self.imageView!.kf_setImageWithURL(NSURL(string: selectedUniversity.universityImage)!, placeholderImage: UIImage(named: "homeBlack"))
         self.nameLabel.text = selectedUniversity.universityName
         self.placeLabel.text = selectedUniversity.universityPlace
         navigationController?.interactivePopGestureRecognizer!.delegate = self
+        //self.navigationController!.interactivePopGestureRecognizer!.enabled = true
+        imageView.setCornerRadius(10.0)
+        imageView.layer.masksToBounds = true
     }
 
     @IBAction func backButtonDidPressed(sender: AnyObject) {
@@ -79,4 +87,12 @@ extension UniversityDetailsViewController: UITableViewDataSource {
 
 extension UniversityDetailsViewController:UIGestureRecognizerDelegate {
 
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if(gestureRecognizer.isEqual(self.navigationController!.interactivePopGestureRecognizer)) {
+            return true
+        } else {
+            return false
+        }
+        
+    }
 }

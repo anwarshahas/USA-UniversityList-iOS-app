@@ -14,6 +14,9 @@ class UniversityTableViewCell: UITableViewCell {
     // UILImageViews
     @IBOutlet weak var universityImageView: UIImageView!
     
+    // UIView
+    @IBOutlet weak var cellView: UIView!
+    
     // UILabels
     @IBOutlet weak var universityNameLabel: UILabel!
     @IBOutlet weak var universityPlaceLabel: UILabel!
@@ -45,6 +48,7 @@ class UniversityTableViewCell: UITableViewCell {
     func initUIComponents() {
         self.imageView?.makeViewCircularWithBorderColor(kColorWhite, borderWidth: 1.0)
         imageView!.layer.masksToBounds = true;
+        self.cellView.setCornerRadius(10.0)
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
