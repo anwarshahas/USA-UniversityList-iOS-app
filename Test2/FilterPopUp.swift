@@ -15,7 +15,7 @@ public protocol FilterPopUpDelegate {
 
 public class FilterPopUp: UIView {
 
-    
+    // UIButtons
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -24,18 +24,19 @@ public class FilterPopUp: UIView {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    // UIImageViews
     @IBOutlet weak var tick1: UIImageView!
     @IBOutlet weak var tick2: UIImageView!
     @IBOutlet weak var tick3: UIImageView!
     @IBOutlet weak var tick4: UIImageView!
     @IBOutlet weak var tick5: UIImageView!
     
+    // UIViews
     @IBOutlet weak var contentView: UIView!
     
+    // members
     public var delegate: FilterPopUpDelegate?
-    
     var filterList: Set<String> = []
-    
     let filterMapDictionary:[String: String] = ["button1":"Engineering", "button2":"Medicine", "button3":"MBA Programme", "button4":"Arts and Science", "button5":"Mathematics"]
     
     /*

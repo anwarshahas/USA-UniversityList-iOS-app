@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		26983473E7F2ECCAD201CB63 /* Pods_Test2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DFB9DEEE9C03FA0679209E /* Pods_Test2.framework */; };
 		5555D85F1CD77C9B009147A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555D85E1CD77C9B009147A3 /* AppDelegate.swift */; };
-		5555D8611CD77C9B009147A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555D8601CD77C9B009147A3 /* ViewController.swift */; };
 		5555D8641CD77C9B009147A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5555D8621CD77C9B009147A3 /* Main.storyboard */; };
 		5555D8671CD77C9B009147A3 /* Test2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5555D8651CD77C9B009147A3 /* Test2.xcdatamodeld */; };
 		5555D8691CD77C9B009147A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5555D8681CD77C9B009147A3 /* Assets.xcassets */; };
@@ -27,6 +26,8 @@
 		5555D8B01CD7AD5D009147A3 /* Universities.json in Resources */ = {isa = PBXBuildFile; fileRef = 5555D8AF1CD7AD5D009147A3 /* Universities.json */; };
 		55D3297B1CD7E46D00E0000E /* FilterPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D3297A1CD7E46D00E0000E /* FilterPopUp.xib */; };
 		55D3297E1CD7EA7F00E0000E /* FilterPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3297D1CD7EA7F00E0000E /* FilterPopUp.swift */; };
+		55D329811CD88AEE00E0000E /* UniversityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D329801CD88AEE00E0000E /* UniversityDetailsViewController.swift */; };
+		55D329831CD894FE00E0000E /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D329821CD894FE00E0000E /* CourseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +49,8 @@
 
 /* Begin PBXFileReference section */
 		3F1C8E5EBA7F2B4CDDE47A64 /* Pods-Test2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test2/Pods-Test2.release.xcconfig"; sourceTree = "<group>"; };
-		5555D85B1CD77C9B009147A3 /* Test2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5555D85B1CD77C9B009147A3 /* Universities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Universities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5555D85E1CD77C9B009147A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5555D8601CD77C9B009147A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5555D8631CD77C9B009147A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5555D8661CD77C9B009147A3 /* Test2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test2.xcdatamodel; sourceTree = "<group>"; };
 		5555D8681CD77C9B009147A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +73,8 @@
 		5555D8AF1CD7AD5D009147A3 /* Universities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Universities.json; sourceTree = "<group>"; };
 		55D3297A1CD7E46D00E0000E /* FilterPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterPopUp.xib; sourceTree = "<group>"; };
 		55D3297D1CD7EA7F00E0000E /* FilterPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterPopUp.swift; sourceTree = "<group>"; };
+		55D329801CD88AEE00E0000E /* UniversityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityDetailsViewController.swift; sourceTree = "<group>"; };
+		55D329821CD894FE00E0000E /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		A00A445863775242AAE945EE /* Pods-Test2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test2/Pods-Test2.debug.xcconfig"; sourceTree = "<group>"; };
 		D1DFB9DEEE9C03FA0679209E /* Pods_Test2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,7 +128,7 @@
 		5555D85C1CD77C9B009147A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5555D85B1CD77C9B009147A3 /* Test2.app */,
+				5555D85B1CD77C9B009147A3 /* Universities.app */,
 				5555D8721CD77C9B009147A3 /* Test2Tests.xctest */,
 				5555D87D1CD77C9B009147A3 /* Test2UITests.xctest */,
 			);
@@ -182,7 +184,6 @@
 				55D3297F1CD8040B00E0000E /* Base */,
 				5555D89F1CD7842B009147A3 /* View Controller */,
 				5555D89C1CD783AD009147A3 /* Navigation View Controller */,
-				5555D8601CD77C9B009147A3 /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -240,7 +241,7 @@
 		5555D89F1CD7842B009147A3 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5555D89A1CD78311009147A3 /* UniversityListViewController.swift */,
+				55D329841CD8A15700E0000E /* University */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -267,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				5555D8A41CD79CE3009147A3 /* UniversityTableViewCell.swift */,
+				55D329821CD894FE00E0000E /* CourseTableViewCell.swift */,
 			);
 			name = "Table View Cell";
 			sourceTree = "<group>";
@@ -336,6 +338,15 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		55D329841CD8A15700E0000E /* University */ = {
+			isa = PBXGroup;
+			children = (
+				5555D89A1CD78311009147A3 /* UniversityListViewController.swift */,
+				55D329801CD88AEE00E0000E /* UniversityDetailsViewController.swift */,
+			);
+			name = University;
+			sourceTree = "<group>";
+		};
 		DF49A57222ECBA6B7F930BE6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,7 +376,7 @@
 			);
 			name = Test2;
 			productName = Test2;
-			productReference = 5555D85B1CD77C9B009147A3 /* Test2.app */;
+			productReference = 5555D85B1CD77C9B009147A3 /* Universities.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5555D8711CD77C9B009147A3 /* Test2Tests */ = {
@@ -532,8 +543,8 @@
 				5555D89B1CD78311009147A3 /* UniversityListViewController.swift in Sources */,
 				5555D8AD1CD7A0D8009147A3 /* Colors.swift in Sources */,
 				5555D89E1CD783D6009147A3 /* StartNavigationViewController.swift in Sources */,
+				55D329811CD88AEE00E0000E /* UniversityDetailsViewController.swift in Sources */,
 				5555D8991CD782E6009147A3 /* BaseViewController.swift in Sources */,
-				5555D8611CD77C9B009147A3 /* ViewController.swift in Sources */,
 				5555D8901CD77CD5009147A3 /* University.swift in Sources */,
 				5555D8A51CD79CE3009147A3 /* UniversityTableViewCell.swift in Sources */,
 				5555D8671CD77C9B009147A3 /* Test2.xcdatamodeld in Sources */,
@@ -541,6 +552,7 @@
 				5555D85F1CD77C9B009147A3 /* AppDelegate.swift in Sources */,
 				55D3297E1CD7EA7F00E0000E /* FilterPopUp.swift in Sources */,
 				5555D8AA1CD7A005009147A3 /* UIColor.swift in Sources */,
+				55D329831CD894FE00E0000E /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +699,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.bullfin.Test2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Universities;
 			};
 			name = Debug;
 		};
@@ -700,7 +712,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.bullfin.Test2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Universities;
 			};
 			name = Release;
 		};

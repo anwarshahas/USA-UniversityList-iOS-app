@@ -10,4 +10,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    func popCurrentViewController() {
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
+    }
+    
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class University: NSObject {
     
+    // Members
     var id:Int
     var universityName:String
     var universityPlace:String

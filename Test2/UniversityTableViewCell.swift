@@ -11,7 +11,10 @@ import Kingfisher
 
 class UniversityTableViewCell: UITableViewCell {
 
+    // UILImageViews
     @IBOutlet weak var universityImageView: UIImageView!
+    
+    // UILabels
     @IBOutlet weak var universityNameLabel: UILabel!
     @IBOutlet weak var universityPlaceLabel: UILabel!
     
@@ -30,11 +33,11 @@ class UniversityTableViewCell: UITableViewCell {
     
     func setUniversity(university:University) {
         initUIComponents()
-        //self.imageView!.kf_setImageWithURL(NSURL(string: university.universityImage)!, placeholderImage: UIImage(named: "homeBlack"))
-        self.imageView?.image = UIImage(named: "homeBlack")
-        //let imagenow = self.imageView?.image
+        self.imageView!.kf_setImageWithURL(NSURL(string: university.universityImage)!, placeholderImage: UIImage(named: "homeBlack"))
+        //self.imageView?.image = UIImage(named: "homeBlack")
+        let imagenow = self.imageView?.image
         
-        //self.imageView!.image = resizeImage(imagenow!, newWidth: 60)
+        self.imageView!.image = resizeImage(imagenow!, newWidth: 60)
         self.universityNameLabel.text = university.universityName
         self.universityPlaceLabel.text = university.universityPlace
     }

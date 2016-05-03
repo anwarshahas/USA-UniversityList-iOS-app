@@ -100,9 +100,9 @@
                     },
                     {
                     "id":15,
-                    "name": "New York University",
-                    "place": "New York, NY",
-                    "image": "https://decollins1969.files.wordpress.com/2016/03/nyu-logo.jpg",
+                    "name": "Pennsylvania State University",
+                    "place": "Old Main, State College, PA 16801",
+                    "image": "https://lh3.googleusercontent.com/-r1Rl7h4YG0I/AAAAAAAAAAI/AAAAAAAACw4/fRVESTM_vC8/s0-c-k-no-ns/photo.jpg",
                     "courses": ["Arts and Science", "Engineering", "Medicine"]
                     },
                     {
@@ -110,7 +110,70 @@
                     "name": "University of Washington",
                     "place": "Seattle, WA",
                     "image": "https://lh4.googleusercontent.com/-OEpZSoFBCco/AAAAAAAAAAI/AAAAAAAADQg/0u4UrvYEYbs/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Medicine"]
+                    },
+                    {
+                    "id":17,
+                    "name": "Virginia Tech",
+                    "place": " Blacksburg, VA 24061",
+                    "image": "https://lh5.googleusercontent.com/-A6mD3SlNkSM/AAAAAAAAAAI/AAAAAAAAAXE/yyIqI5mrcOk/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":18,
+                    "name": "Loyola University Chicago",
+                    "place": "1032 W Sheridan Rd, Chicago, IL 60660",
+                    "image": "http://www.luc.edu/media/lucedu/logo/internal/images/Primary_3color.jpg",
+                    "courses": ["Engineering", "Medicine"]
+                    },
+                    {
+                    "id":19,
+                    "name": "University of Florida",
+                    "place": "Gainesville, FL 32611",
+                    "image": "https://lh3.googleusercontent.com/-mFo27EtzsY8/AAAAAAAAAAI/AAAAAAAAB8w/n6CtdS5ZAVY/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering", "Arts and Science"]
+                    },
+                    {
+                    "id":20,
+                    "name": "Indiana University Bloomington",
+                    "place": "107 S Indiana Ave, Bloomington",
+                    "image": "https://www.indiana.edu/images/iu-250x250.png",
+                    "courses": ["MBA Programme", "Arts and Science"]
+                    },
+                    {
+                    "id":21,
+                    "name": "University of Notre Dame",
+                    "place": "Notre Dame, IN 46556",
+                    "image": "https://lh3.googleusercontent.com/-Hn5ViQ-A3Jk/AAAAAAAAAAI/AAAAAAAAAC0/CXb8LLGXrTA/s0-c-k-no-ns/photo.jpg",
                     "courses": ["MBA Programme", "Engineering", "Medicine"]
+                    },
+                    {
+                    "id":22,
+                    "name": "College of the Holy Cross",
+                    "place": "1 College St, Worcester, MA 01610",
+                    "image": "https://lh3.googleusercontent.com/-uC1Qtf6yfXs/AAAAAAAAAAI/AAAAAAAAADA/Npguu8nzKIA/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme"]
+                    },
+                    {
+                    "id":23,
+                    "name": "University of Alabama",
+                    "place": "Tuscaloosa, AL 35487",
+                    "image": "http://www.logospike.com/wp-content/uploads/2014/11/University_of_alabama_logo.jpg",
+                    "courses": ["Medicine"]
+                    },
+                    {
+                    "id":24,
+                    "name": "University of Michigan",
+                    "place": "500 S State St, Ann Arbor",
+                    "image": "https://lh4.googleusercontent.com/-Rccq-Fi8TzA/AAAAAAAAAAI/AAAAAAAAAHU/Pb-WivSkb8I/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["MBA Programme", "Engineering"]
+                    },
+                    {
+                    "id":25,
+                    "name": "Brown University",
+                    "place": "Providence, RI 02912",
+                    "image": "https://lh6.googleusercontent.com/-t3RDnbgYqSk/AAAAAAAAAAI/AAAAAAAADeI/KoFWoU4ZpAw/s0-c-k-no-ns/photo.jpg",
+                    "courses": ["Arts and Science"]
                     },
                     
               ]

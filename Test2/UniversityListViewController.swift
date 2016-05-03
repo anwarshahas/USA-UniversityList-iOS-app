@@ -22,12 +22,16 @@ class UniversityListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createUniversityList()
-        universityListTable.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        universityListTable.reloadData()
     }
     
     func initUIComponents() {
@@ -39,14 +43,6 @@ class UniversityListViewController: BaseViewController {
     }
     
     func createUniversityList() {
-        
-        //let path = NSBundle.mainBundle().pathForResource("Universities", ofType: "json")
-
-        
-        //let data = NSData(contentsOfURL: NSURL(fileURLWithPath: path!), options: NSDataReadingOptions.DataReadingMappedIfSafe)
-        //let jsonObj = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
-        //convertJsonIntoUniversityModel(jsonObj["university"])
- 
         
         if let path = NSBundle.mainBundle().pathForResource("Universities", ofType: "json") {
             do {
@@ -102,6 +98,14 @@ class UniversityListViewController: BaseViewController {
         
         universityList.removeAll()
         copyArray(filterList)
+        if(universityList.count == 0) {
+            let alert: UIAlertView = UIAlertView()
+            alert.title = "Empty"
+            alert.message = "Result not found"
+            alert.addButtonWithTitle("Cancel")
+            alert.delegate = self  // set the delegate here
+            alert.show()
+        }
         universityListTable.reloadData()
     }
     
@@ -118,6 +122,14 @@ class UniversityListViewController: BaseViewController {
             universityList.append(university)
         }
         universityListTable.reloadData()
+    }
+    
+    func pushDetailsViewController(university:University) {
+        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let detailsViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("UniversityDetailsViewController") as! UniversityDetailsViewController
+        detailsViewController.selectedUniversity = university
+        self.navigationController!.pushViewController(detailsViewController, animated: true)
     }
     
 }
@@ -144,12 +156,14 @@ extension UniversityListViewController: UITableViewDataSource {
         let university = universityList[indexPath.row]
         cell.setUniversity(university)
         cell.imageView!.layer.cornerRadius = cell.imageView!.frame.size.width / 2.0;
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.layoutIfNeeded()
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        let university = universityList[indexPath.row] as University
+        pushDetailsViewController(university)
     }
  
 }
