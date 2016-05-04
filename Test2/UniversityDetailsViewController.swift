@@ -40,7 +40,7 @@ class UniversityDetailsViewController: BaseViewController {
     }
     
     func initUIComponents() {
-        
+        /*
         self.imageView!.kf_setImageWithURL(NSURL(string: selectedUniversity.universityImage)!, placeholderImage: UIImage(named: "homeBlack"))
         self.nameLabel.text = selectedUniversity.universityName
         self.placeLabel.text = selectedUniversity.universityPlace
@@ -48,6 +48,7 @@ class UniversityDetailsViewController: BaseViewController {
         //self.navigationController!.interactivePopGestureRecognizer!.enabled = true
         imageView.setCornerRadius(10.0)
         imageView.layer.masksToBounds = true
+ */
     }
 
     @IBAction func backButtonDidPressed(sender: AnyObject) {
@@ -65,7 +66,8 @@ extension UniversityDetailsViewController: UITableViewDelegate {
 extension UniversityDetailsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.selectedUniversity.courses.count
+        //return self.selectedUniversity.courses.count
+        return 0
     }
     
     
@@ -73,8 +75,8 @@ extension UniversityDetailsViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseTableViewCell", forIndexPath: indexPath) as! CourseTableViewCell
-        let name = selectedUniversity.courses[selectedUniversity.courses.startIndex.advancedBy(indexPath.row)]
-        cell.setCourse(name)
+        //let name = selectedUniversity.courses[selectedUniversity.courses.startIndex.advancedBy(indexPath.row)]
+        //cell.setCourse(name)
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.layoutIfNeeded()
         return cell

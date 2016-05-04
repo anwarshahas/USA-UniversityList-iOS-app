@@ -10,16 +10,15 @@ import UIKit
 import Kingfisher
 
 class UniversityTableViewCell: UITableViewCell {
-
-    // UILImageViews
-    @IBOutlet weak var universityImageView: UIImageView!
     
     // UIView
     @IBOutlet weak var cellView: UIView!
     
     // UILabels
     @IBOutlet weak var universityNameLabel: UILabel!
-    @IBOutlet weak var universityPlaceLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var cityPinLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,33 +35,17 @@ class UniversityTableViewCell: UITableViewCell {
     
     func setUniversity(university:University) {
         initUIComponents()
-        self.imageView!.kf_setImageWithURL(NSURL(string: university.universityImage)!, placeholderImage: UIImage(named: "homeBlack"))
-        //self.imageView?.image = UIImage(named: "homeBlack")
-        let imagenow = self.imageView?.image
         
-        self.imageView!.image = resizeImage(imagenow!, newWidth: 60)
         self.universityNameLabel.text = university.universityName
-        self.universityPlaceLabel.text = university.universityPlace
+        self.addressLabel.text = university.address
+        self.cityPinLabel.text = university.city + "-" + university.zip
+        self.countryLabel.text = university.countryName
     }
     
     func initUIComponents() {
         self.imageView?.makeViewCircularWithBorderColor(kColorWhite, borderWidth: 1.0)
         imageView!.layer.masksToBounds = true;
         self.cellView.setCornerRadius(10.0)
-    }
-    
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-        
-        let scale = newWidth / image.size.width
-        let newHeight = image.size.height * scale
-        //let newHeight = newWidth
-        
-        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
     }
 
 }

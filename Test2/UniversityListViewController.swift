@@ -21,7 +21,7 @@ class UniversityListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createUniversityList()
+        fetchData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -31,7 +31,7 @@ class UniversityListViewController: BaseViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        universityListTable.reloadData()
+        //universityListTable.reloadData()
     }
     
     func initUIComponents() {
@@ -43,20 +43,11 @@ class UniversityListViewController: BaseViewController {
         
     }
     
-    func createUniversityList() {
-        
-        if let path = NSBundle.mainBundle().pathForResource("Universities", ofType: "json") {
-            do {
-                let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                do {
-                    let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                    if let universities: [NSDictionary] = jsonResult["universities"] as? [NSDictionary] {
-                        convertJsonIntoUniversityModel(universities)
-                    }
-                } catch {}
-            } catch {}
+    func fetchData() {
+        University.fetchAllRooms { (universities: [University]?) in
+            self.universityList = universities!
+            self.universityListTable.reloadData()
         }
-        
     }
     
     func showFilterPopUp() {
@@ -90,7 +81,7 @@ class UniversityListViewController: BaseViewController {
     func filterFromList(list:Set<String>) {
         
         filterList.removeAll()
-        
+        /*
         for university in originalCopyList {
             if(list.isSubsetOf(university.courses)) {
                 filterList.append(university)
@@ -108,6 +99,7 @@ class UniversityListViewController: BaseViewController {
             alert.show()
         }
         universityListTable.reloadData()
+    */
     }
     
     func copyArray(array:Array<University>) {
@@ -139,7 +131,7 @@ class UniversityListViewController: BaseViewController {
 
 extension UniversityListViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 85
+        return 110
     }
 }
 
