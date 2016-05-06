@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Test2/Alamofire.framework"
   install_framework "Pods-Test2/IQKeyboardManagerSwift.framework"
+  install_framework "Pods-Test2/JGProgressHUD.framework"
   install_framework "Pods-Test2/Kingfisher.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Test2/Alamofire.framework"
   install_framework "Pods-Test2/IQKeyboardManagerSwift.framework"
+  install_framework "Pods-Test2/JGProgressHUD.framework"
   install_framework "Pods-Test2/Kingfisher.framework"
 fi

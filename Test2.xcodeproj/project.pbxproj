@@ -28,6 +28,8 @@
 		55D3297E1CD7EA7F00E0000E /* FilterPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3297D1CD7EA7F00E0000E /* FilterPopUp.swift */; };
 		55D329811CD88AEE00E0000E /* UniversityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D329801CD88AEE00E0000E /* UniversityDetailsViewController.swift */; };
 		55D329831CD894FE00E0000E /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D329821CD894FE00E0000E /* CourseTableViewCell.swift */; };
+		55D3298B1CDA429400E0000E /* FilterPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3298A1CDA429400E0000E /* FilterPopUpViewController.swift */; };
+		55D3298D1CDB325500E0000E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3298C1CDB325500E0000E /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		55D3297D1CD7EA7F00E0000E /* FilterPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterPopUp.swift; sourceTree = "<group>"; };
 		55D329801CD88AEE00E0000E /* UniversityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityDetailsViewController.swift; sourceTree = "<group>"; };
 		55D329821CD894FE00E0000E /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		55D3298A1CDA429400E0000E /* FilterPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterPopUpViewController.swift; sourceTree = "<group>"; };
+		55D3298C1CDB325500E0000E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		A00A445863775242AAE945EE /* Pods-Test2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test2/Pods-Test2.debug.xcconfig"; sourceTree = "<group>"; };
 		D1DFB9DEEE9C03FA0679209E /* Pods_Test2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				55D329841CD8A15700E0000E /* University */,
+				55D3298A1CDA429400E0000E /* FilterPopUpViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			children = (
 				5555D8A41CD79CE3009147A3 /* UniversityTableViewCell.swift */,
 				55D329821CD894FE00E0000E /* CourseTableViewCell.swift */,
+				55D3298C1CDB325500E0000E /* LocationTableViewCell.swift */,
 			);
 			name = "Table View Cell";
 			sourceTree = "<group>";
@@ -545,6 +551,8 @@
 				5555D89E1CD783D6009147A3 /* StartNavigationViewController.swift in Sources */,
 				55D329811CD88AEE00E0000E /* UniversityDetailsViewController.swift in Sources */,
 				5555D8991CD782E6009147A3 /* BaseViewController.swift in Sources */,
+				55D3298B1CDA429400E0000E /* FilterPopUpViewController.swift in Sources */,
+				55D3298D1CDB325500E0000E /* LocationTableViewCell.swift in Sources */,
 				5555D8901CD77CD5009147A3 /* University.swift in Sources */,
 				5555D8A51CD79CE3009147A3 /* UniversityTableViewCell.swift in Sources */,
 				5555D8671CD77C9B009147A3 /* Test2.xcdatamodeld in Sources */,

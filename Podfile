@@ -7,6 +7,7 @@ target 'Test2' do
 	pod 'IQKeyboardManagerSwift'
 	pod 'Alamofire', '~> 3.3'
     pod 'Kingfisher', '~> 2.3'
+    pod 'JGProgressHUD'
 end
 
 target 'Test2Tests' do

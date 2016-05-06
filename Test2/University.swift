@@ -52,7 +52,7 @@ class University: NSObject {
         return set;
     }
     
-   class func fetchAllRooms(completion: ([University]?) -> Void) {
+   class func fetchAllRooms(completion: (Bool, [University]?) -> Void) {
         Alamofire.request(
             .GET,
             "https://inventory.data.gov/api/action/datastore_search?resource_id=38625c3d-5388-4c16-a30f-d105432553a4&limit=200",
@@ -61,7 +61,7 @@ class University: NSObject {
             .responseJSON { (response) -> Void in
                 guard response.result.isSuccess else {
                     print("Error while fetching remote rooms: \(response.result.error)")
-                    completion(nil)
+                    completion(false, nil)
                     return
                 }
                 
@@ -69,7 +69,7 @@ class University: NSObject {
                     result = value["result"] as? [String: AnyObject],
                 records = result["records"] as? [[String: AnyObject]] else {
                         print("Malformed data received from fetchAllRooms service")
-                        completion(nil)
+                        completion(false, nil)
                         return
                 }
                 
@@ -80,7 +80,7 @@ class University: NSObject {
                     universities.append(university)
                 }
                 
-                completion(universities)
+                completion(true, universities)
         }
     }
 

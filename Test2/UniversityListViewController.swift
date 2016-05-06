@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import JGProgressHUD
 
-class UniversityListViewController: BaseViewController {
+class UniversityListViewController: BaseViewController, UIPopoverPresentationControllerDelegate {
 
     // Table view
     @IBOutlet weak var universityListTable: UITableView!
@@ -18,6 +19,12 @@ class UniversityListViewController: BaseViewController {
     var filterPopUp = FilterPopUp()
     var filterList: Array<University> = []
     var originalCopyList: Array<University> = []
+    
+    var filterPopUpViewController = FilterPopUpViewController()
+    
+    var locations:Array<String> = []
+    
+    var presented:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +51,35 @@ class UniversityListViewController: BaseViewController {
     }
     
     func fetchData() {
-        University.fetchAllRooms { (universities: [University]?) in
-            self.universityList = universities!
-            self.universityListTable.reloadData()
+        let hud = JGProgressHUD(style: JGProgressHUDStyle.Dark)
+        
+        hud.textLabel.text = "Fetching Data"
+        hud.showInView(self.view)
+        
+        /*
+        JGProgressHUD *HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+        HUD.textLabel.text = @"Loading";
+        [HUD showInView:self.view];
+        [HUD dismissAfterDelay:3.0];
+ */
+        University.fetchAllRooms { (status: Bool, universities: [University]?) in
+            hud.dismiss()
+            if(status) {
+                self.universityList = universities!
+                self.originalCopyList = universities!
+                self.universityListTable.reloadData()
+                self.createLocationList()
+            }
         }
+    }
+    
+    func createLocationList() {
+        var locationList: Set<String> = []
+        for university in universityList {
+            locationList.insert(university.countryName)
+        }
+        
+        locations = Array(locationList).sort()
     }
     
     func showFilterPopUp() {
@@ -67,7 +99,42 @@ class UniversityListViewController: BaseViewController {
     }
  
     @IBAction func filterButtonDidPressed(sender: AnyObject) {
-        showFilterPopUp()
+        //showFilterPopUp()
+        showFilterPopUpViewController(sender)
+    }
+    
+    func showFilterPopUpViewController(sender: AnyObject) {
+        
+        if(presented) {
+            presentViewController(filterPopUpViewController, animated: true, completion: nil)
+        } else {
+            let storyboard : UIStoryboard = UIStoryboard(
+                name: "Main",
+                bundle: nil)
+            let menuViewController: FilterPopUpViewController = storyboard.instantiateViewControllerWithIdentifier("FilterPopUpViewController") as! FilterPopUpViewController
+            
+            menuViewController.locations = self.locations
+            menuViewController.delegate = self
+            
+            menuViewController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+//            menuViewController.preferredContentSize = CGSizeMake(100, 100)
+            menuViewController.definesPresentationContext = true
+            
+            self.filterPopUpViewController = menuViewController
+            
+//            let popoverMenuViewController = menuViewController.popoverPresentationController
+            
+//            popoverMenuViewController?.delegate = self
+            
+//            popoverMenuViewController!.sourceView = self.view
+ //           popoverMenuViewController!.sourceRect = self.view.bounds
+            //popoverMenuViewController!.backgroundColor = UIColor.clearColor()
+            
+   //         popoverMenuViewController!.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+            //popoverController.sourceRect = CGRectMake(width/4, hieght/4, width/2, hieght/2);
+            presented = true
+            presentViewController(menuViewController, animated: true, completion: nil)
+        }
     }
     
     func convertJsonIntoUniversityModel(objects: Array<NSDictionary>) {
@@ -78,28 +145,36 @@ class UniversityListViewController: BaseViewController {
         }
     }
     
-    func filterFromList(list:Set<String>) {
-        
-        filterList.removeAll()
-        /*
-        for university in originalCopyList {
-            if(list.isSubsetOf(university.courses)) {
-                filterList.append(university)
-            }
-        }
+    func filterFromList(dictionary:Dictionary<String, AnyObject>, filteredLocations: Set<String>) {
         
         universityList.removeAll()
-        copyArray(filterList)
-        if(universityList.count == 0) {
-            let alert: UIAlertView = UIAlertView()
-            alert.title = "Empty"
-            alert.message = "Result not found"
-            alert.addButtonWithTitle("Cancel")
-            alert.delegate = self  // set the delegate here
-            alert.show()
+        
+        if(filteredLocations.count > 0) {
+            filterList.removeAll()
+            for university in originalCopyList {
+                if(filteredLocations.contains(university.countryName)) {
+                    filterList.append(university)
+                }
+            }
+        } else {
+            filterList = originalCopyList
         }
-        universityListTable.reloadData()
-    */
+        
+        if(dictionary["sort"]!["enable"] as! Bool) {
+            if(dictionary["sort"]!["order"] as! String == "a-z") {
+                
+                universityList = filterList.sort {$0.universityName < $1.universityName }
+            } else if(dictionary["sort"]!["order"] as! String == "z-a") {
+
+                universityList = filterList.sort {$0.universityName > $1.universityName }
+            }
+            universityListTable.reloadData()
+        } else {
+            universityList = filterList
+            universityListTable.reloadData()
+        }
+        
+        
     }
     
     func copyArray(array:Array<University>) {
@@ -155,8 +230,8 @@ extension UniversityListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let university = universityList[indexPath.row] as University
-        pushDetailsViewController(university)
+        //let university = universityList[indexPath.row] as University
+        //pushDetailsViewController(university)
     }
  
 }
@@ -180,10 +255,29 @@ extension UniversityListViewController: FilterPopUpDelegate {
     
     func doneButtonDidPressed(list:Set<String>) {
         dismissFilterPopUp()
-        filterFromList(list)
+        
     }
     
 }
+
+
+extension UniversityListViewController: FilterPopUpViewControllerDelegate {
+    
+    func clearButtonDidPressed() {
+        dismissFilterPopUp()
+        filterPopUp.removeFromSuperview()
+        presented = false
+        refreshPage()
+    }
+    
+    func applayButtonDidPressed(dictionary:Dictionary<String, AnyObject>, filteredLocations: Set<String>) {
+        dismissFilterPopUp()
+        filterFromList(dictionary, filteredLocations: filteredLocations)
+    }
+    
+}
+
+
 
 extension UniversityListViewController:UIGestureRecognizerDelegate {
     
